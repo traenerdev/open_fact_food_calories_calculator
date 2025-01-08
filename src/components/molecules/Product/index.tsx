@@ -28,13 +28,16 @@ export default function Product({product,index}:Props){
             {product.product_name || product.abbreviated_product_name_fr || product.generic_name_fr}
         </td>
         <td className="whitespace-nowrap px-6 py-4 font-semibold">
-            {product.nutriments.proteins_100g}g
+            {product.brands}
         </td>
         <td className="whitespace-nowrap px-6 py-4 font-semibold">
-            {product.nutriments.carbohydrates_100g}g
+            {product.nutriments.proteins_100g ? `${product.nutriments.proteins_100g}g` : "-"}
         </td>
         <td className="whitespace-nowrap px-6 py-4 font-semibold">
-            {product.nutriments.fat_100g}g
+            {product.nutriments.carbohydrates_100g ? `${product.nutriments.carbohydrates_100g}g` : "-"}
+        </td>
+        <td className="whitespace-nowrap px-6 py-4 font-semibold">
+            {product.nutriments.fat_100g ? `${product.nutriments.fat_100g}g` : "-"}
         </td>
     </tr>
         

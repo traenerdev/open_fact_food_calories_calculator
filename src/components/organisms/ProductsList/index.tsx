@@ -99,6 +99,7 @@ export default function ProductLsts(){
                             <th scope="col" className="px-6 py-4">#</th>
                             <th scope="col" className="px-6 py-4"></th>
                             <th scope="col" className="px-6 py-4">Label</th>
+                            <th scope="col" className="px-6 py-4">Marque</th>
                             <th scope="col" className="px-6 py-4">Protéines/100g</th>
                             <th scope="col" className="px-6 py-4">Glucides/100g</th>
                             <th scope="col" className="px-6 py-4">Lipides/100g</th>
