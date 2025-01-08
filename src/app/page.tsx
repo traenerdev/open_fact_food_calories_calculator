@@ -1,6 +1,7 @@
 import SearchInput from "@/components/organisms/SearchInput";
 import ProductLsts from "@/components/organisms/ProductsList";
 import Head from "next/head";
+import { FaAppleAlt } from "react-icons/fa";
 
 
 export default function Home() {
@@ -25,9 +26,9 @@ export default function Home() {
               className="w-full"
             >
               <h1 
-                className="font-extrabold text-[2.2rem] text-sky-600"
+                className="font-extrabold text-[2.2rem] text-lime-600 flex flex-row items-center"
               >
-                Open Fact Food
+                <FaAppleAlt className="mr-3 text-lime-500"/> Open Fact Food
               </h1>
               <h2
                 className="font-semibold text-[1.2rem] mt-3"
