@@ -1,5 +1,7 @@
-import SearchInput from "@/components/molecules/SearchInput";
+import SearchInput from "@/components/organisms/SearchInput";
+import ProductLsts from "@/components/organisms/ProductsList";
 import Head from "next/head";
+
 
 export default function Home() {
   return (
@@ -16,32 +18,42 @@ export default function Home() {
     {/*********
      * MAIN 
      *********/}
-
-    <div className='flex flex-1 flex-col items-center justify-center'>
-
-      <section>
-        <h1 
-          className="font-extrabold text-[2.2rem] text-sky-600"
-        >
-          Open Fact Food Calories Calculator
-        </h1>
-        <h2
-          className="font-semibold text-[1.2rem] text-center"
-        >
-          Calcule les calories de ta liste de produits.
-        </h2>
-      </section>
-
-      <section>
-        <div
-          className="mt-3"
-        >
-          <SearchInput/>
+       <main className='flex flex-1 w-full bg-[#ffffff] justify-center items-center flex-col'>
           
-        </div>
-      </section>
+        <div className='w-1/2 justify-start items-start relative z-10 flex-col mt-[30px]'>
+            <section
+              className="w-full"
+            >
+              <h1 
+                className="font-extrabold text-[2.2rem] text-sky-600"
+              >
+                Open Fact Food
+              </h1>
+              <h2
+                className="font-semibold text-[1.2rem] mt-3"
+              >
+                Entre le nom de ton produit pour consulter sa fiche
+              </h2>
+            </section>
 
-    </div>
+            <section
+              className="w-full"
+            >
+              <div
+                className="mt-3 w-full"
+              >
+                <SearchInput/>
+                <ProductLsts />
+                
+              </div>
+            </section>
+        </div>
+         
+      </main>
+
+     
+
+    
     </>
 
   );

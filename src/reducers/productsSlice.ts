@@ -1,9 +1,13 @@
 import { searchProducts } from '@/api/products/searchProduct'
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import Product from '@/interfaces/Product'
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 
 
 interface Init{
-    products: [],
+    products: Product[],
+    produtPerPage: number,
+    search: string,
+    page: number,
     requests: {
         search : "pending" | "idle"
     }
@@ -11,6 +15,9 @@ interface Init{
 
 const initialState:Init = {
     products : [],
+    produtPerPage: 100,
+    search: "",
+    page: 1,
     requests: {
         search : "idle"
     }
@@ -20,6 +27,13 @@ export const productsSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
+        onHandleSearch:(state,action: PayloadAction<{search:string}>)=>{
+            state.search = action.payload.search
+        },
+
+        onHandleProductPerPages:(state,action: PayloadAction<{productsPerPage:number}>)=>{
+            state.produtPerPage = action.payload.productsPerPage
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -41,6 +55,7 @@ export const productsSlice = createSlice({
 
 export default productsSlice.reducer
 export const { 
-
+    onHandleSearch,
+    onHandleProductPerPages
 
 } = productsSlice.actions
