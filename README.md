@@ -2,10 +2,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
-
+First, install packages:
 ```bash
-npm run dev
+npm i
 # or
 yarn dev
 # or
@@ -14,23 +13,22 @@ pnpm dev
 bun dev
 ```
 
+
+Then, run the development server:
+
+```bash
+npm run dev
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Open Fact Food
 
-## Learn More
+Open Food Facts is a project developed by a non-profit, industry-independent association with voluntary contributors from around the world. It is an open and collaborative database, with 700,000 products listed by 16,000 contributors across 200 countries.
 
-To learn more about Next.js, take a look at the following resources:
+## The purpose of this repos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This repo allows you to test the Open Fact Food API to retrieve product lists and product details. It's still in development.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
