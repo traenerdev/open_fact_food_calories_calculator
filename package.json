@@ -16,8 +16,7 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-redux": "^9.2.0",
-    "react-toastify": "^11.0.2",
-    "tw-elements-react": "^1.0.0-alpha-end"
+    "react-toastify": "^11.0.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
