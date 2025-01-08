@@ -3,7 +3,6 @@ import ProductLsts from "@/components/organisms/ProductsList";
 import Head from "next/head";
 import { FaAppleAlt } from "react-icons/fa";
 
-
 export default function Home() {
   return (
     <>

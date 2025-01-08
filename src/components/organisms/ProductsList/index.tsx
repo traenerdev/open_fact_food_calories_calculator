@@ -3,8 +3,10 @@
 import { searchProducts } from "@/api/products/searchProduct"
 import { AppDispatch, RootState } from "@/app/store"
 import Product from "@/components/molecules/Product"
+import ProductModal from "@/components/molecules/ProductModal"
+import ProductType from "@/interfaces/Product"
 import { onHandleProductPerPages } from "@/reducers/productsSlice"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Id, toast, ToastContainer } from "react-toastify"
 
@@ -18,7 +20,8 @@ export default function ProductLsts(){
     const search = useSelector((state:RootState)=> state.productsSlice.search)
     const productsPerPage = useSelector((state:RootState)=> state.productsSlice.produtPerPage)
     const pending = useSelector((state:RootState) => state.productsSlice.requests.search === "pending") 
-
+    const [productSelected, setProductSelected] = useState<ProductType | null>(null)
+    const ref= useRef<HTMLDialogElement>(null)
 
 
     const handleChangeProductPerPages = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -29,6 +32,12 @@ export default function ProductLsts(){
         dispatch(onHandleProductPerPages({productsPerPage: nbProducts}))
 
     };
+
+
+    const onOpenModal = (product:ProductType) => {
+        setProductSelected(product)
+        ref.current?.showModal()
+    }
 
 
     
@@ -112,6 +121,7 @@ export default function ProductLsts(){
                                         key={index}
                                         product={product}
                                         index={index}
+                                        onClick={onOpenModal}
                                         
                                     />
                                 )
@@ -124,6 +134,11 @@ export default function ProductLsts(){
             </div>
 
             <ToastContainer position={"bottom-center"} />
+
+            <ProductModal
+                ref={ref}
+                product={productSelected}
+            />
                         
         </section>
     )
