@@ -12,6 +12,8 @@ export default interface Product{
         proteins_100g: number | null,
         carbohydrates_100g: number | null,
         fat_100g: number | null
-    }
+    },
+    quantity: string,
+
 
 }
